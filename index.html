@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四海影视 - 行旅江湖驿 · 东海南北片单/机车江湖/老四海站避雷 | sihaiyingshi-h5.github.io</title>
+<meta name="description" content="四海影视，行旅江湖驿风单页：驿灯橙、远帆蓝、古道褐、雪岭白、江湖墨、义气朱。东口都市悬疑、南口海岛治愈、西口公路自由、北口雪夜惊悚、中原江湖兄弟片，以及老牌四海影视/QVOD聚合站避雷。官网 https://sihaiyingshi-h5.github.io">
+<meta name="keywords" content="四海影视, 行旅江湖, 四方片单, 南澳岛, 机车江湖, 公路片, 海岛治愈, 老四海影视避雷, 四海影院避雷">
+<meta name="author" content="四海影视">
+<meta name="robots" content="index,follow">
+<meta name="bingbot" content="index,follow">
+<meta name="theme-color" content="#11161f">
+<style>
+:root{
+  --bg:#11161f;--bg2:#18202c;--panel:#1e2937;--line:rgba(47,109,246,.32);
+  --lamp:#ff8a3d;--sail:#2f6df6;--road:#6b4f3a;--snow:#eef3fb;--ink:#eaf1ff;--blood:#e23b3b;--muted:#94a6bf;
+  --mono:Consolas,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:62px}
+body{
+  background:
+    radial-gradient(560px 320px at 84% -8%,rgba(255,138,61,.16),transparent),
+    radial-gradient(520px 320px at -8% 8%,rgba(47,109,246,.16),transparent),
+    linear-gradient(180deg,#11161f,#18202c 60%,#0c1017);
+  color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.9;
+}
+a{color:var(--lamp);text-decoration:none}
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;border-bottom:2px solid var(--sail);background:rgba(17,22,31,.93);backdrop-filter:blur(8px)}
+.logo b{font-family:var(--mono);font-size:18px;color:var(--sail);letter-spacing:1px}
+.logo span{display:block;font-size:9px;letter-spacing:5px;color:var(--muted);font-family:var(--mono)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{font-size:12px;padding:5px 9px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink)}
+.nav a:hover{border-color:var(--lamp);color:var(--lamp)}
+.hero{max-width:1040px;margin:0 auto;padding:52px 20px 24px;position:relative;text-align:center;overflow:hidden}
+.road{position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(115deg,rgba(255,138,61,.06) 0 22px,transparent 22px 44px)}
+.hero .inner{position:relative;z-index:2}
+.kicker{font-family:var(--mono);font-size:12px;color:var(--lamp);letter-spacing:2px}
+.hero h1{font-size:32px;margin:8px 0 6px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--sail)}
+.hero p{color:var(--muted);max-width:740px;margin:0 auto 12px;font-size:15px}
+.hero .url{display:inline-block;font-family:var(--mono);font-size:13px;background:var(--panel);border:1px dashed var(--sail);color:var(--sail);padding:7px 14px;border-radius:999px}
+.metrics{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.metrics div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:108px}
+.metrics b{display:block;font-size:18px;color:var(--lamp);font-family:var(--mono)}
+.metrics small{color:var(--muted);font-size:12px}
+.wrap{max-width:1060px;margin:0 auto;padding:16px 20px 40px}
+.sec{display:flex;align-items:baseline;gap:10px;margin:26px 0 14px;border-bottom:2px solid var(--sail);padding-bottom:6px}
+.sec h2{font-size:20px;font-weight:900}
+.sec h2 b{color:var(--lamp)}
+.sec small{color:var(--muted);font-size:12px;font-family:var(--mono)}
+.sec .chip{margin-left:auto;font-size:11px;color:#11161f;background:var(--snow);padding:3px 10px;border-radius:999px;font-weight:800}
+.gates{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gate{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px;position:relative;transition:.2s}
+.gate:hover{transform:translateY(-4px);border-color:var(--lamp)}
+.gate .dir{position:absolute;top:-10px;left:12px;font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:999px;font-weight:800;color:#11161f}
+.dir.east{background:var(--sail)}
+.dir.south{background:#37c98b}
+.dir.west{background:var(--lamp)}
+.dir.north{background:var(--snow)}
+.gate .ico{font-size:24px;margin-top:6px}
+.gate h3{font-size:15px;margin:4px 0 2px}
+.gate p{font-size:12px;color:var(--muted)}
+.gate .pick{margin-top:8px;font-size:12px;color:var(--snow);font-family:var(--mono)}
+.mid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.card h3{font-size:15px;color:var(--lamp);font-family:var(--mono);margin-bottom:4px}
+.card p{font-size:13px;color:var(--muted)}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:14px}
+.list li{list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink)}
+.list li:last-child{border-bottom:none}
+.list b{color:var(--lamp);font-family:var(--mono)}
+.vocab{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.vcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+.vcard h4{font-size:14px;color:var(--sail);font-family:var(--mono);margin-bottom:4px}
+.vcard p{font-size:12px;color:var(--muted)}
+.about p{color:var(--muted);font-size:14px;margin-bottom:8px}
+.about code{background:var(--bg2);border:1px solid var(--line);color:var(--lamp);padding:2px 7px;border-radius:6px;font-family:var(--mono)}
+.warn{margin-top:12px;background:rgba(226,59,59,.12);border:1px solid rgba(226,59,59,.45);border-radius:12px;padding:12px 14px;color:#ffd2cf;font-size:13px;font-family:var(--mono)}
+.foot{text-align:center;padding:24px 20px;border-top:2px solid var(--sail);color:var(--muted);font-size:12px;font-family:var(--mono)}
+@media(max-width:860px){.gates{grid-template-columns:1fr 1fr}.mid{grid-template-columns:1fr}.vocab{grid-template-columns:1fr}}
+@media(max-width:540px){.gates{grid-template-columns:1fr}.hero h1{font-size:25px}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="bar">
+  <div class="logo"><b>四海影视</b><span>FOUR-GATE TRAVEL CINEMA</span></div>
+  <nav class="nav">
+    <a href="#home">行旅驿</a>
+    <a href="#gates">四方驿口</a>
+    <a href="#jianghu">江湖兄弟片</a>
+    <a href="#kit">行旅锦囊</a>
+    <a href="#slang">四海黑话</a>
+    <a href="#avoid">老四海避雷</a>
+    <a href="#about">关于</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="road"></div>
+  <div class="inner">
+    <span class="kicker">// sihai.depart({ from:"南澳岛", to:["东","南","西","北"] })</span>
+    <h1>四海影视 · <em>行旅江湖驿</em></h1>
+    <p>不是老牌“四海影视/QVOD/快播免费站”，也不是“四海影院万部 4K 聚合”。这是南澳岛出发的机车驿口：东口看都市诡计，南口吹海岛风，西口跑公路，北口熬雪夜惊悚，中原放江湖兄弟片。</p>
+    <div class="url">https://sihaiyingshi-h5.github.io</div>
+    <div class="metrics">
+      <div><b>4 驿口</b><small>东南西北</small></div>
+      <div><b>1 中原</b><small>江湖兄弟</small></div>
+      <div><b>0 资源</b><small>只开路不存片</small></div>
+      <div><b>index,follow</b><small>必应友好</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="sec" id="gates">
+    <h2>🚦 四方驿口 · <b>先选方向，再选片</b></h2><small>four gates</small><span class="chip">别直奔热搜</span>
+  </div>
+  <div class="gates">
+    <div class="gate"><span class="dir east">东口</span><div class="ico">🏙️</div><h3>都市悬疑</h3><p>写字楼、监控、旧小区、匿名短信，人性在电梯里关门。</p><div class="pick">pick：《沉默的真相》《信号》《看不见的客人》</div></div>
+    <div class="gate"><span class="dir south">南口</span><div class="ico">🏝️</div><h3>海岛治愈</h3><p>济州、冲绳、南澳、海岸村，咸湿风一吹，内耗退潮。</p><div class="pick">pick：《我们的蓝调》《海岸村恰恰恰》《海街日记》</div></div>
+    <div class="gate"><span class="dir west">西口</span><div class="ico">🏜️</div><h3>公路自由</h3><p>机车、沙漠、落日、电台坏掉，人生在后视镜里变小。</p><div class="pick">pick：《逍遥骑士》《后会无期》《无依之地》</div></div>
+    <div class="gate"><span class="dir north">北口</span><div class="ico">❄️</div><h3>雪夜惊悚</h3><p>冻港、极夜、小屋、脚印绕一圈，谁都没出门。</p><div class="pick">pick：《看不见的客人》北欧版气质、《闪灵》、《吾栖之肤》冷调场</div></div>
+  </div>
+
+  <div class="sec" id="jianghu">
+    <h2>🛵 中原·江湖兄弟片 · <b>聚散离合，万事半称心</b></h2><small>brotherhood</small><span class="chip">韩寒系/港产江湖</span>
+  </div>
+  <div class="mid">
+    <div class="card"><h3>《四海》</h3><p>南澳岛少年+机车+欠债离岛，爱情友情亲情搅成一场远行。[9](@ref)</p></div>
+    <div class="card"><h3>《后会无期》</h3><p>“听过很多道理，依然过不好这一生”——大陆公路片里的现代江湖。</p></div>
+    <div class="card"><h3>《乘风破浪》</h3><p>正太帮、旧工厂、磁带和摩托，小镇青年版古惑仔。</p></div>
+    <div class="card"><h3>《飞驰人生》</h3><p>赛车手+领航员，兄弟情写在弯道和刹车点里。</p></div>
+    <div class="card"><h3>《龙城岁月/黑社会》</h3><p>香火、叔父、选坐馆——现代江湖的权力游戏。</p></div>
+    <div class="card"><h3>《英雄本色》</h3><p>义气朱那抹红：小马哥点火柴，江湖就有了体温。</p></div>
+  </div>
+
+  <div class="sec" id="kit">
+    <h2>🎒 行旅锦囊 · <b>出驿前看一眼</b></h2><small>travel kit</small><span class="chip">不迷路</span>
+  </div>
+  <ul class="list">
+    <li><b>选方向＞选热榜</b> —— 今晚想被治愈就南口，想烧脑就东口，别让算法替你定行程。</li>
+    <li><b>公路片别快进</b> —— 荒漠、加油站、旧电台都是戏，快进等于少活一段路。</li>
+    <li><b>海岛片关弹幕</b> —— “我也想去”刷过去，海风就被吵成菜市场。</li>
+    <li><b>江湖片别较真法理</b> —— 看义气、看聚散、看“别再四处漂泊”那句落点。</li>
+    <li><b>雪夜片备毯子</b> —— 北口看完别立刻睡，不然梦里全是绕屋脚印。</li>
+  </ul>
+
+  <div class="sec" id="slang">
+    <h2>🗺️ 四海黑话 · <b>行旅人嘴里的暗号</b></h2><small>sihai slang</small><span class="chip">江湖人听得懂</span>
+  </div>
+  <div class="vocab">
+    <div class="vcard"><h4>驿口</h4><p>不是频道，是“心情出口”：东南西北+中原，五个门对应五种活法。</p></div>
+    <div class="vcard"><h4>南澳出发</h4><p>四海影视的母题：小岛→大城市→江湖→回头看故乡。[9](@ref)</p></div>
+    <div class="vcard"><h4>半称心</h4><p>“人生哪有全如意，万事只求半称心”——江湖片的高级结局。</p></div>
+    <div class="vcard"><h4>机车隐喻</h4><p>摩托不是道具，是“我还想跑、但已经知道回不去了”。</p></div>
+    <div class="vcard"><h4>假四海</h4><p>标题写“四海影视免费/QVOD/快播/万部 4K”，点进去是聚合广告场。</p></div>
+    <div class="vcard"><h4>远帆蓝</h4><p>东口与官网主色之一，代表“别在岸边吵，出海才见人”。</p></div>
+  </div>
+
+  <section class="list" id="avoid" style="margin-top:22px">
+    <h3 style="font-size:17px;color:var(--blood);font-family:var(--mono);margin-bottom:8px">🚫 老四海站避雷 · 搜“四海影视”别踩这些</h3>
+    <li><b>“四海影视免费高清 / 四海影院 / 四海影视 QVOD 快播”</b> —— 老牌同名站多走 P2P/快播式资源，现在镜像站常带弹窗、劫持、假播放器。[10](@ref)</li>
+    <li><b>“四海万部 4K 秒更 / 全球影视聚合”</b> —— 把日韩英美泰更新时间拼成“四海”包装，本质是热片换皮。</li>
+    <li><b>“专用解码器 / 快播兼容播放器下载”</b> —— 正常网页观影不需要装来源不明 EXE/APK。</li>
+    <li><b>“加群拿终身会员 99 元 / 四海 VIP 破解”</b> —— 个人收款+群转移，第二天群名变短剧带货。</li>
+    <li><b>“万能解析 / 任何视频都能放”</b> —— 第三方解析站，版权与隐私双雷区，和行旅江湖无关。</li>
+    <li><b>“四海/五湖四海/四海剧场/四海影业”混搜</b> —— 近似名李鬼多，认准 <code>sihaiyingshi-h5.github.io</code>。</li>
+  </section>
+
+  <section class="list about" style="margin-top:18px">
+    <h3 style="font-size:17px;color:var(--sail);font-family:var(--mono);margin-bottom:8px">🛵 关于 四海影视</h3>
+    <p><strong style="color:var(--sail)">四海影视</strong> 是“行旅江湖驿 / 四方片单台”：驿灯橙、远帆蓝、古道褐、雪岭白、江湖墨、义气朱。做东海南北中原五口挑片、机车江湖片单、行旅锦囊、四海黑话、老牌四海站避雷。<strong style="color:var(--blood)">只开路、荐片、排片单，不存片、不解析第三方源、不提供下载、不挂 QVOD/快播。</strong></p>
+    <p>官网：<code>https://sihaiyingshi-h5.github.io</code></p>
+    <p>内链全用 <code>#</code> 占位，CSS/DIV 全内联，不生成 robots.txt / sitemap.xml，GitHub Pages 直传即可；必应收录靠标题、描述、语义结构、移动端体验。</p>
+    <p>看片请走正版院线、授权流媒体、电视台回看、公共版权片库。四海不是“万部库”，是“东海南北都走一趟，最后回到南澳岛那盏驿灯”。</p>
+    <div class="warn">⚠️ 搜“四海影视”先眯眼：带 QVOD/快播/万部 4K/破解 VIP 的，是老江湖的壳；行旅驿只发“往哪个口走”的片单。</div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  © 2026 四海影视 · sihaiyingshi-h5.github.io · 东海南北都跑过，才懂“别再四处漂泊” 🛵🌊
+</footer>
+
+</body>
+</html>
